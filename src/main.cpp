@@ -82,9 +82,9 @@ void loop()
   
   MQ3.update(); // Update data, arduino reads the voltage from the analog pin
   float PPM = MQ3.readSensor(); // Sensor reads PPM concentration using the model, a and b values set previously or from the setup
-  float filtered_PPM = kalman_filter(PPM); /// filters the ppm reading 
+  //float filtered_PPM = kalman_filter(PPM); /// filters the ppm reading - use this variable to access kalman filter
 
-  if (filtered_PPM < 400) // main program runs when PPM < 400, ppm can be set according to needs
+  if (PPM < 400) // main program runs when PPM < 400, ppm can be set according to needs
   {
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
