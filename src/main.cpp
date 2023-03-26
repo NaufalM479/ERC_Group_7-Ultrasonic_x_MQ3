@@ -84,7 +84,7 @@ void loop()
   float PPM = MQ3.readSensor(); // Sensor reads PPM concentration using the model, a and b values set previously or from the setup
   //float filtered_PPM = kalman_filter(PPM); /// filters the ppm reading - use this variable to instead access kalman filter
 
-  if (PPM < 400) // main program runs when PPM < 400, ppm can be set according to needs
+  if (PPM < 200) // main program runs when PPM < 400, ppm can be set according to needs
   {
     digitalWrite(trigPin, LOW);
     delayMicroseconds(2);
